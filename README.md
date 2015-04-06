@@ -6,7 +6,7 @@ To use this application:
 
 1. Ensure you have Docker and docker-compose on your machine. There are hundreds of instruction sets online. If you are an OSX user, something similar to `brew install boot2docker docker-compose` will be a good place to start.
 1. Clone the git repository to your machine
-1. Copy the docker_env/env file to your .env directory and complete the appropriate variables
+1. Copy the docker_env/env file to a file named .env in the repository root and complete the appropriate variables
 1. Run `bash init.sh`. Read this script and understand what's going on before you do. (Note: This may take some time)
 1. Access your newly built application at http://localhost:8080/ (or if you are using OSX replace Localhost with your boot2docker IP)
 
