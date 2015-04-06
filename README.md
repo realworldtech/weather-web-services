@@ -36,4 +36,4 @@ Probably. But if you are going to do that have a close think about what you are 
 
 ## Can I use this docker image set for my own application?
 
-Sure. Also check out Mark Tees' (mktb) project, Django-Quick at https://github.com/mkbt/django_quick. This project is a little old now (Given it's based on Fig which has now become docker-compose) but is probably cleaner than our project here.
+Sure. Also check out Mark Tees' (@mkbt) project, Django-Quick at https://github.com/mkbt/django_quick. This project is a little old now (Given it's based on Fig which has now become docker-compose) but is probably cleaner than our project here.
