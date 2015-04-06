@@ -21,7 +21,7 @@ To develop your application:
 
 The first time you build the docker image there is a lot to download. The app docker image is based on the Debian/Jessie code release, which is 127MB. The initial set of package installations for the environment build is 104MB (or there abouts). We wouldn't recommend you do this install on a 3G connection unless you have sufficient data.
 
-We normally work with the django-rest-framework codebase. There are a lot of suitable REST frameworks for this project, but this is a good place to start.
+We normally work with the django-rest-framework codebase. There are a lot of suitable REST frameworks for this project, but this is a good place to start; and so we have included it in this sample application.
 
 If you change the name of your project (from weather-web-services) you'll need to also update your docker-compose.yml file to make the "image" for the command container match the output of your build.
 
@@ -37,3 +37,8 @@ Probably. But if you are going to do that have a close think about what you are 
 ## Can I use this docker image set for my own application?
 
 Sure. Also check out Mark Tees' (@mkbt) project, Django-Quick at https://github.com/mkbt/django_quick. This project is a little old now (Given it's based on Fig which has now become docker-compose) but is probably cleaner than our project here.
+
+## What's with that "location" model?
+
+We wanted to give you an example of implementing django-rest-framework. This isn't supposed to be (just) an exercise in how well you can read the docs - we want to see how you work with the data and information that's available. Giving you an example of working model, in the project, seemed like a good place to start. You don't have to use it.
+

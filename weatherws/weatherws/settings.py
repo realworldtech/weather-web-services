@@ -48,11 +48,12 @@ class Common(Configuration):
     )
 
     THIRD_PARTY_APPS = (
-
+        'rest_framework',
+        'rest_framework.authtoken',
         )
 
     LOCAL_APPS = (
-
+        'location',
         )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -166,6 +167,18 @@ class Common(Configuration):
     EMAIL_USE_TLS = values.BooleanValue(False)
     SERVER_EMAIL = values.Value('')
     # END EMAIL CONFIGURATION
+
+    REST_FRAMEWORK = {
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+            'rest_framework.authentication.TokenAuthentication',
+            'rest_framework.authentication.BasicAuthentication',
+            'rest_framework.authentication.SessionAuthentication',
+        ),
+        # Use Django's standard `django.contrib.auth` permissions,
+        # or allow read-only access for unauthenticated users.
+        'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+        'PAGINATE_BY': 10,
+    }
 
 class Dev(Common):
     """ 
