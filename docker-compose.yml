@@ -1,0 +1,44 @@
+data:
+  build: .
+  volumes:
+        - /srv/django/weatherws_data
+source:
+  build: .
+  volumes:
+        - .:/srv/django/weatherws
+web:
+  restart: always
+  image: nginx
+  volumes:
+      - ./nginx:/etc/nginx
+  ports:
+      - "8080:8080"
+  volumes_from:
+      - app
+command:
+  image: weatherwebservices_app
+  command: /bin/bash
+  working_dir: /srv/django/weatherws/weatherws
+  env_file:
+        - .env
+  environment:
+        - PYTHONUNBUFFERED=1
+  volumes_from:
+        - source
+        - data
+  volumes:
+        - ./docker_env:/docker_env
+app:
+  restart: always
+  build: .
+  command: gunicorn wsgi:application -w 3 --error-logfile - --log-level debug --preload --bind unix:/srv/django/weatherws_data/gunicorn.sock
+  working_dir: /srv/django/weatherws/weatherws
+  env_file:
+        - .env
+  environment:
+        - PYTHONUNBUFFERED=1
+  volumes_from:
+        - source
+        - data
+  volumes:
+        - ./docker_env:/docker_env
