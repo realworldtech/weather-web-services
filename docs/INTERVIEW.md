@@ -22,7 +22,7 @@ An example data set is contained below in JSON format.
       "datetime": "2015-04-01T15:00:00.100Z",
       "windspeed": {
         "speed": "1",
-        "units": "kmph"
+        "units": "km/h"
       },
       "rainfall": {
         "quantity": "10",
@@ -31,7 +31,7 @@ An example data set is contained below in JSON format.
       },
       "temperature": {
         "measurement": "10",
-        "units": "celcius"
+        "units": "celsius"
       }
     }
 

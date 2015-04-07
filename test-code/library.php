@@ -86,14 +86,14 @@ function generate_random_weather_data($number_of_data_sets, $start_date) {
     "inches"
     );
   $wind_unit_types = array(
-    "mps", // meters per second - 3.6 kilometers per hour
-    "kmph", // kilometers per hour
+    "m/s", // meters per second - 3.6 kilometers per hour
+    "km/h", // kilometers per hour
     "mph", // miles per hour - 1.609344 kilometers per hour
-    "kph" // knots per hour - 1.852 kilometers per hour
+    "kn" // knots (nautical miles per hour) - 1.852 kilometers per hour
     );
   $temperature_units = array(
-    "celcius",
-    "farenheight"
+    "celsius",
+    "fahrenheit"
     );
 
   $i = 0;
