@@ -1,3 +1,5 @@
+#!/bin/bash
+
 kill_run_rm_containers() {
 docker ps -a | grep weatherws | grep _run | grep Exited | awk '{print $1}' | xargs docker rm -f
 }
