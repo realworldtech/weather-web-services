@@ -16,10 +16,9 @@ from os.path import join, dirname
 
 from configurations import Configuration, values
 
+
 class Common(Configuration):
-
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -35,7 +34,6 @@ class Common(Configuration):
 
     ALLOWED_HOSTS = []
 
-
     # Application definition
 
     DJANGO_APPS = (
@@ -50,11 +48,11 @@ class Common(Configuration):
     THIRD_PARTY_APPS = (
         'rest_framework',
         'rest_framework.authtoken',
-        )
+    )
 
     LOCAL_APPS = (
         'location',
-        )
+    )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -91,7 +89,6 @@ class Common(Configuration):
 
     WSGI_APPLICATION = 'weatherws.wsgi.application'
 
-
     # Database
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -102,20 +99,14 @@ class Common(Configuration):
         }
     }
 
-
     # Internationalization
     # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
     LANGUAGE_CODE = 'en-us'
-
     TIME_ZONE = 'Australia/Sydney'
-
     USE_I18N = True
-
     USE_L10N = True
-
     USE_TZ = True
-
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
     TEMPLATE_DIRS = (
@@ -180,9 +171,10 @@ class Common(Configuration):
         'PAGINATE_BY': 10,
     }
 
+
 class Dev(Common):
     """ 
     Development configuration values
     """
-    
+
     pass

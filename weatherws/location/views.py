@@ -7,27 +7,30 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+
 class LocationList(APIView):
-  """
-  List all Locations, or create a new Location.
-  """
+    """
+    List all Locations, or create a new Location.
+    """
 
-  def get(self, request, format=None):
-      locations = Location.objects.all()
-      serializer = LocationSerializer(locations, many=True)
-      return Response(serializer.data)
+    def get(self, request, format=None):
+        locations = Location.objects.all()
+        serializer = LocationSerializer(locations, many=True)
+        return Response(serializer.data)
 
-  def post(self, request, format=None):
-      serializer = LocationSerializer(data=request.data)
-      if serializer.is_valid():
-          serializer.save()
-          return Response(serializer.data, status=status.HTTP_201_CREATED)
-      return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, format=None):
+        serializer = LocationSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class LocationDetail(APIView):
     """
     Retrieve, update or delete a Location instance.
     """
+
     def get_object(self, pk):
         try:
             return Location.objects.get(pk=pk)
