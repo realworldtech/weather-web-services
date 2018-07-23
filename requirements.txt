@@ -1,5 +1,5 @@
 # Web server
-gunicorn==19.3.0
+gunicorn==19.9.0
 gevent==1.0.1
 
 # Bleeding edge Django
